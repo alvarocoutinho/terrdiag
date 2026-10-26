@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: "terrdiag: Two-Layer Territorial Diagnostic Framework"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - given-names: Álvaro Luz Alves
+    family-names: Coutinho
+    email: alvaro.coutinho@usp.br
+    affiliation: "Universidade de São Paulo, Escola Superior de Agricultura Luiz de Queiroz (ESALQ/USP)"
+    orcid: "https://orcid.org/0009-0002-5118-0972"
+version: 0.5.0b7
+date-released: 2026-10-26
+license: MIT
+repository-code: "https://github.com/alvarocoutinho/terrdiag"
+keywords:
+  - spatial analysis
+  - LISA
+  - K-means
+  - territorial diagnostics
+  - public policy evaluation
+  - RenovaBio
+  - biofuels
+  - Brazil
+abstract: >-
+  terrdiag is a Python library implementing a two-layer territorial diagnostic
+  framework for longitudinal public policy metrics. Layer 1 builds entity-level
+  (municipal) typologies via PCA and K-means on socio-environmental indicators,
+  with bootstrap stability checks; Layer 2 applies global and local Moran's I
+  (LISA) with distance-based spatial weights to point-level outcomes; the
+  overlay cross-tabulates both layers into diagnostic cells that signal
+  territorial tensions between structural typology and outcome dynamics.
+  The package ships a reference data-preparation pipeline for Brazil's
+  RenovaBio programme.

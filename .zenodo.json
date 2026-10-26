@@ -1,0 +1,30 @@
+{
+  "title": "terrdiag: Two-Layer Territorial Diagnostic Framework",
+  "version": "0.5.0b7",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "mit",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Coutinho, Álvaro Luz Alves",
+      "affiliation": "Universidade de São Paulo, Escola Superior de Agricultura Luiz de Queiroz (ESALQ/USP)",
+      "orcid": "0009-0002-5118-0972"
+    }
+  ],
+  "description": "<p><strong>terrdiag</strong> is a Python library implementing a two-layer territorial diagnostic framework for longitudinal public policy metrics.</p><ul><li><strong>Layer 1</strong> builds entity-level (municipal) typologies via PCA and K-means on socio-environmental indicators, with bootstrap stability checks (ARI) and post-hoc independence tests.</li><li><strong>Layer 2</strong> applies global and local Moran's I (LISA) with distance-based spatial weights (Gaussian kernel, k-nearest neighbours, inverse distance) to point-level outcomes, including bandwidth sensitivity sweeps.</li><li><strong>Overlay</strong> cross-tabulates both layers into diagnostic cells that signal territorial tensions between structural typology and outcome dynamics.</li></ul><p>Every high-level call is logged and input files are hashed (SHA-256) to support reproducible runs. The package ships a reference data-preparation pipeline for Brazil's RenovaBio programme (terrdiag.case_studies.renovabio).</p><p>Status: beta (0.5.0b7). The public API may change before 1.0.</p><p><strong>Funding.</strong> This study was financed in part by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior – Brasil (CAPES) – Finance Code 001, and by grant #2025/01530-0, São Paulo Research Foundation (FAPESP).</p>",
+  "keywords": [
+    "spatial analysis",
+    "LISA",
+    "K-means",
+    "territorial diagnostics",
+    "public policy evaluation",
+    "RenovaBio",
+    "biofuels",
+    "Brazil",
+    "Python"
+  ],
+  "communities": [
+    {"identifier": "renovabio-multimetodo"}
+  ]
+}

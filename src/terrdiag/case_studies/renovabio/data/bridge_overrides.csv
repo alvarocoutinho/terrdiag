@@ -1,0 +1,15 @@
+﻿cnpj_clean,cd_ibge,nm_mun,uf,note
+03347747000109,5218904,Rubiataba,GO,COOPERATIVA AGROIND. RUBIATABA — extrator falhou
+04165520000105,5105234,Lambari D'Oeste,MT,apóstrofo — match limpa
+04165520000296,5105622,Mirassol d'Oeste,MT,apóstrofo — match limpa
+08070566001173,5213103,Mineiros,GO,BRENCO Usina Água Emendada — Mineiros/GO (conhecido)
+08070566001254,5216452,Perolândia,GO,BRENCO Usina Morro Vermelho — Perolândia/GO
+08070566001769,5100607,Alto Taquari,MT,BRENCO Usina Alto Taquari — Alto Taquari/MT
+21783238000100,3136306,João Pinheiro,MG,Destilaria Rio do Cachimbo — endereço diz João Pinheiro/MG (NOTA: UF do panel = SP mas razão social = MG)
+28144326000101,3111804,Canápolis,MG,CANÁPOLIS AÇÚCAR — Canápolis/MG (panel marcou GO mas é MG)
+38278706000192,3539301,Pirassununga,SP,prefixo '970 –' caiu no extrator
+44373108000103,3535507,Paraguaçu Paulista,SP,COCAL Paraguaçu — Paraguaçu Paulista/SP
+45765914000181,3527603,Luís Antônio,SP,CENTRAL MORENO — Luís Antônio/SP (acento)
+45968162000156,3527405,Lucélia,SP,"SALTO BOTELHO — cidade=nan, endereço diz Lucélia/SP"
+71304687000105,3551504,Serrana,SP,"PEDRA AGROIND. — cidade=nan, endereço diz Serrana/SP"
+75717355000529,4115200,Maringá,PR,SANTA TEREZINHA Unidade Iguatemi — Iguatemi é distrito de Maringá/PR

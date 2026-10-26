@@ -1,0 +1,97 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "terrdiag"
+# Version is read from src/terrdiag/_version.py (single source of truth).
+dynamic = ["version"]
+description = "Two-layer territorial diagnostic framework for longitudinal public policy metrics"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    {name = "Álvaro L. A. Coutinho", email = "alvaro.coutinho@usp.br"},
+]
+requires-python = ">=3.10"
+keywords = ["spatial analysis", "policy evaluation", "LISA", "K-means", "RenovaBio"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+    # Upper bounds protect ambientes-geridos como Colab/Kaggle, onde
+    # scikit-learn e outros pacotes nativos são compilados contra versões
+    # específicas de numpy/pandas. Subir numpy para 2.4 quebra a ABI do
+    # sklearn instalado nesses ambientes.
+    "pandas>=2.0,<3",
+    "numpy>=1.24,<2.3",
+    "openpyxl>=3.1",        # para ler .xlsx
+    "matplotlib>=3.7",       # plotting é core, não opcional
+]
+
+[project.optional-dependencies]
+layer1 = [
+    "scikit-learn>=1.3",
+    "scipy>=1.10",
+]
+layer2 = [
+    "esda>=2.5",
+    "libpysal>=4.7",
+    "scipy>=1.10",
+]
+geo = [
+    "geopandas>=0.14",
+    "shapely>=2.0",
+]
+full = [
+    "terrdiag[layer1,layer2,geo]",
+]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.1",
+    "mypy>=1.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/alvarocoutinho/terrdiag"
+Repository = "https://github.com/alvarocoutinho/terrdiag"
+Issues = "https://github.com/alvarocoutinho/terrdiag/issues"
+Changelog = "https://github.com/alvarocoutinho/terrdiag/blob/main/CHANGELOG.md"
+
+[tool.setuptools.dynamic]
+version = {attr = "terrdiag._version.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"terrdiag.case_studies.renovabio.data" = ["*.csv"]
+terrdiag = ["data/*.json", "data/*.csv"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests", "src/terrdiag/case_studies"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]  # line length handled by formatter
+
+[tool.mypy]
+python_version = "3.10"
+strict_optional = true
+warn_unused_ignores = true
